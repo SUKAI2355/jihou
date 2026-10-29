@@ -42,7 +42,24 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 25
+	it.options.encoding = 'UTF-8'
 }
+
+// Dependency-free unit tests for the parsers, scheduler, atomic reload and title queue.
+sourceSets {
+	unitTest {
+		compileClasspath += sourceSets.main.output
+		runtimeClasspath += sourceSets.main.output
+	}
+}
+
+tasks.register('unitTest', JavaExec) {
+	dependsOn unitTestClasses
+	classpath = sourceSets.unitTest.runtimeClasspath
+	mainClass = 'com.jihoumod.JihouTests'
+}
+
+tasks.named('check') { dependsOn tasks.named('unitTest') }
 
 java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task

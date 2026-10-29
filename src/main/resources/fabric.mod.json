@@ -3,32 +3,15 @@
 	"id": "jihou",
 	"version": "${version}",
 	"name": "Jihou",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
+	"description": "Dedicated-server scheduled chat, title, subtitle and actionbar notifications.",
 	"license": "CC0-1.0",
 	"icon": "assets/jihou/icon.png",
-	"environment": "*",
+	"environment": "server",
 	"entrypoints": {
 		"main": [
 			"com.jihoumod.Jihou"
-		],
-		"client": [
-			"com.jihoumod.client.JihouClient"
 		]
 	},
-	"mixins": [
-		"jihou.mixins.json",
-		{
-			"config": "jihou.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.20.1",
 		"minecraft": "~26.3",
