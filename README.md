@@ -3,7 +3,7 @@
 曜日と実時刻を使い、オンラインプレイヤー全員へ通知するDedicated Server専用Fabric Modです。
 Minecraft 26.3 / Fabric Loader 0.20.1以上 / Fabric API 0.165.0+26.3 / Java 25。
 packageは `com.jihoumod`、mod IDと既存Gradleプロジェクト名は `jihou` です。
-クライアントへのMod導入は不要です。ライセンスはCC0-1.0です。
+クライアントへのMod導入は不要です。ライセンスはMPL-2.0です。
 
 ## 導入・設定
 
